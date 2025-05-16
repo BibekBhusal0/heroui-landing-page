@@ -38,7 +38,7 @@ export const CountdownSection: React.FC = () => {
   };
 
   return (
-    <section className="bg-gradient-to-r from-primary-900 to-primary-800 px-4 py-16 text-white md:px-8">
+    <section className="bg-gradient-to-r dark:from-primary-200 from-primary-800 to-primary-600 text-white dark:to-primary-400 px-4 py-16 md:px-8">
       <div className="mx-auto max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -48,7 +48,7 @@ export const CountdownSection: React.FC = () => {
           className="text-center"
         >
           <h2 className="mb-4 text-3xl font-bold md:text-4xl">{specialOffer.title}</h2>
-          <p className="mx-auto mb-8 max-w-2xl text-white/80">{specialOffer.description}</p>
+          <p className="mx-auto mb-8 max-w-2xl">{specialOffer.description}</p>
 
           <div className="mb-8 flex justify-center gap-4">
             {Object.entries(timeLeft).map(([key, value]) => (
@@ -60,12 +60,12 @@ export const CountdownSection: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ type: "spring", stiffness: 300, damping: 15 }}
               >
-                <Card className="flex h-20 w-20 items-center justify-center bg-white text-primary-900">
+                <Card className="flex h-20 w-20 items-center justify-center bg-white text-primary-800 dark:text-primary-200">
                   <CardBody className="flex items-center justify-center p-0">
                     <span className="text-3xl font-bold">{formatTime(value)}</span>
                   </CardBody>
                 </Card>
-                <span className="mt-2 text-sm capitalize text-white/80">{key}</span>
+                <span className="mt-2 text-sm capitalize">{key}</span>
               </motion.div>
             ))}
           </div>

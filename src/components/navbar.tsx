@@ -12,6 +12,7 @@ import {
 } from "@heroui/react";
 import { motion } from "framer-motion";
 import { headerButtons, navLinks } from "../data/landing-data";
+import ThemeSwitch from "./theme-switch";
 
 interface NavbarProps {
   activeSection: string;
@@ -60,7 +61,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
       </NavbarContent>
 
       <NavbarContent justify="end">
-
+        <ThemeSwitch />
         {headerButtons.map((button, index) => (
           <NavbarItem key={`${button.text}-${index}`} className="hidden sm:flex">
             <Button as={Link} color='primary' variant={button.variant} href={button.href}>{button.text}</Button>
@@ -82,16 +83,12 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
             </Link>
           </NavbarMenuItem>
         ))}
-        <NavbarMenuItem className = 'gap-2 flex flex-col'>
+        <NavbarMenuItem className='gap-2 flex flex-col'>
           {headerButtons.map((button, index) => (
             <NavbarItem key={`${button.text}-${index}`} className="">
               <Button as={Link} color='primary' variant={button.variant} href={button.href}>{button.text}</Button>
             </NavbarItem>
           ))}
-          {/* <Link color="primary" href="#" size="lg">
-
-            Login
-          </Link> */}
         </NavbarMenuItem>
       </NavbarMenu>
     </HeroNavbar>

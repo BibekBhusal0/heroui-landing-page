@@ -28,7 +28,7 @@ export const Footer: React.FC = () => {
                   <Link
                     key={index}
                     href={social.link}
-                    className="text-foreground-500 hover:text-primary"
+                    className="text-foreground-500 hover:text-primary-500"
                   >
                     {social.icon && <Icon icon={social.icon} className="text-xl" />}
                   </Link>
@@ -50,7 +50,7 @@ export const Footer: React.FC = () => {
               <ul className="space-y-2">
                 {section.links.map((link) => (
                   <li key={link.text}>
-                    <Link href={link.href} className="text-foreground-600 hover:text-primary">
+                    <Link href={link.href} className="text-foreground-600 hover:text-primary-500">
                       {link.text}
                     </Link>
                   </li>
@@ -69,15 +69,15 @@ export const Footer: React.FC = () => {
             <h3 className="mb-4 font-semibold">Contact</h3>
             <ul className="space-y-2">
               <li className="flex items-center gap-2 text-foreground-600">
-                <Icon icon="lucide:map-pin" className="text-primary" />
+                <Icon icon="lucide:map-pin" className="text-primary-500" />
                 {footer.contact.location}
               </li>
               <li className="flex items-center gap-2 text-foreground-600">
-                <Icon icon="lucide:phone" className="text-primary" />
+                <Icon icon="lucide:phone" className="text-primary-500" />
                 {footer.contact.phone}
               </li>
               <li className="flex items-center gap-2 text-foreground-600">
-                <Icon icon="lucide:mail" className="text-primary" />
+                <Icon icon="lucide:mail" className="text-primary-500" />
                 {footer.contact.email}
               </li>
             </ul>
@@ -92,7 +92,7 @@ export const Footer: React.FC = () => {
                 <Link
                   key={link.text}
                   href={link.href}
-                  className="text-sm text-foreground-500 hover:text-primary"
+                  className="text-sm text-foreground-500 hover:text-primary-500"
                 >
                   {link.text}
                 </Link>
