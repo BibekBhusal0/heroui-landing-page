@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardBody, CardHeader, CardFooter, Button, Switch, Badge } from "@heroui/react";
+import { Card, CardBody, CardHeader, CardFooter, Button, Switch, Chip, cn } from "@heroui/react";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 import { pricing } from "../data/landing-data";
@@ -36,9 +36,9 @@ export const PricingSection: React.FC = () => {
                 Yearly
               </span>
               {isYearly && (
-                <Badge color="success" variant="flat" className="text-xs">
+                <Chip color="success" variant="flat" className="text-xs">
                   {pricing.yearly_message}
-                </Badge>
+                </Chip>
               )}
             </span>
           </div>
@@ -55,15 +55,15 @@ export const PricingSection: React.FC = () => {
               className="relative"
             >
               {plan.title === pricing.highlight?.title && (
-                <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 transform">
-                  <Badge color="primary" variant="solid" className="px-4 py-1 text-sm">
+                <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 z-50 transform">
+                  <Chip color="primary" variant="solid" className="px-4 py-1 text-sm">
                     {pricing.highlight?.message}
-                  </Badge>
+                  </Chip>
                 </div>
               )}
 
               <Card
-                className={`h-full ${plan.title === pricing.highlight?.title ? "border-primary shadow-lg" : ""}`}
+                className={cn('h-full', plan.title === pricing.highlight?.title ? " border-2 border-primary shadow-lg" : "")}
                 shadow={plan.title === pricing.highlight?.title ? "md" : "sm"}
               >
                 <CardHeader className="flex flex-col gap-2 pb-0">

@@ -90,7 +90,7 @@ export const testimonials: Testimonial[] = [
 ];
 
 export const pricing: Pricing = {
-  yearly_message: "save 20%",
+  yearly_message: "Save 20%",
   highlight: { title: "Pro", message: "Most Popluar" },
   plans: [
     {
