@@ -1,0 +1,89 @@
+import React from "react";
+import { Navbar as HeroNavbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button, NavbarMenuToggle, NavbarMenu, NavbarMenuItem } from "@heroui/react";
+import { motion } from "framer-motion";
+import { navLinks } from "../data/landing-data";
+
+interface NavbarProps {
+  activeSection: string;
+}
+
+export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
+  return (
+    <HeroNavbar 
+      isBordered 
+      isBlurred 
+      maxWidth="xl" 
+      className="bg-background/70 backdrop-blur-md"
+      shouldHideOnScroll={false}
+    >
+      <NavbarBrand>
+        <motion.p 
+          className="font-bold text-inherit text-xl"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          ACME
+        </motion.p>
+      </NavbarBrand>
+      
+      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+        {navLinks.map((link) => (
+          <NavbarItem key={link.name} isActive={activeSection === link.href.substring(1)}>
+            <Link 
+              color={activeSection === link.href.substring(1) ? "primary" : "foreground"} 
+              href={link.href}
+              className="relative"
+            >
+              {link.name}
+              {activeSection === link.href.substring(1) && (
+                <motion.span 
+                  className="absolute -bottom-1 left-0 h-0.5 w-full bg-primary"
+                  layoutId="activeSection"
+                  transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                />
+              )}
+            </Link>
+          </NavbarItem>
+        ))}
+      </NavbarContent>
+      
+      <NavbarContent justify="end">
+        <NavbarItem className="hidden lg:flex">
+          <Link href="#">Login</Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Button as={Link} color="primary" href="#" variant="flat">
+            Sign Up
+          </Button>
+        </NavbarItem>
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          className="sm:hidden"
+        />
+      </NavbarContent>
+      
+      <NavbarMenu>
+        {navLinks.map((link, index) => (
+          <NavbarMenuItem key={`${link.name}-${index}`}>
+            <Link
+              color={activeSection === link.href.substring(1) ? "primary" : "foreground"}
+              className="w-full"
+              href={link.href}
+              size="lg"
+            >
+              {link.name}
+            </Link>
+          </NavbarMenuItem>
+        ))}
+        <NavbarMenuItem>
+          <Link color="primary" href="#" size="lg">
+            Login
+          </Link>
+        </NavbarMenuItem>
+      </NavbarMenu>
+    </HeroNavbar>
+  );
+};
