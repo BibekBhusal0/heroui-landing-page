@@ -25,21 +25,18 @@ export const PricingSection: React.FC = () => {
 
           <div className="mb-8 flex items-center justify-center gap-3">
             <Tabs selectedKey={selectedTab} onSelectionChange={(e) => setSelectedTab(e as string)}>
-              <Tab value="monthly"
-                key="monthly" title="Monthly" />
-              <Tab value="yearly"
+              <Tab value="monthly" key="monthly" title="Monthly" />
+              <Tab
+                value="yearly"
                 key="yearly"
                 title={
-
                   <>
-
                     Yearly
-                    {
-                      pricing.yearly_message &&
-                      <Chip color="success" variant="flat" className="text-xs ml-2">
+                    {pricing.yearly_message && (
+                      <Chip color="success" variant="flat" className="ml-2 text-xs">
                         {pricing.yearly_message}
                       </Chip>
-                    }
+                    )}
                   </>
                 }
               />
@@ -58,7 +55,7 @@ export const PricingSection: React.FC = () => {
               className="relative"
             >
               {plan.title === pricing.highlight?.title && (
-                <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 z-50 transform">
+                <div className="absolute left-1/2 top-0 z-50 -translate-x-1/2 -translate-y-1/2 transform">
                   <Chip color="primary" variant="solid" className="px-4 py-1 text-sm">
                     {pricing.highlight?.message}
                   </Chip>
@@ -66,7 +63,10 @@ export const PricingSection: React.FC = () => {
               )}
 
               <Card
-                className={cn('h-full', plan.title === pricing.highlight?.title ? " border-2 border-primary shadow-lg" : "")}
+                className={cn(
+                  "h-full",
+                  plan.title === pricing.highlight?.title ? "border-2 border-primary shadow-lg" : ""
+                )}
                 shadow={plan.title === pricing.highlight?.title ? "md" : "sm"}
               >
                 <CardHeader className="flex flex-col gap-2 pb-0">

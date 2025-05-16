@@ -51,8 +51,6 @@ const App: React.FC = () => {
       </main>
 
       <Footer />
-
-
     </div>
   );
 };

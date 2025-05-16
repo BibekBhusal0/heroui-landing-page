@@ -1,4 +1,3 @@
-
 export interface Hero {
   headline: string;
   subtext?: string;
@@ -105,5 +104,5 @@ export interface NavLink {
 export interface HeaderButtons {
   text: string;
   href?: string;
-  variant?: 'solid' | 'faded' | 'bordered' | 'light' | 'flat' | 'ghost' | 'shadow'
+  variant?: "solid" | "faded" | "bordered" | "light" | "flat" | "ghost" | "shadow";
 }

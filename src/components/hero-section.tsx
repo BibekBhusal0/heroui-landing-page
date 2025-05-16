@@ -22,15 +22,16 @@ export const HeroSection: React.FC = () => {
             {hero.headline}
           </motion.h1>
 
-          {hero.subtext &&  <motion.p
-            className="max-w-md text-lg text-foreground-600"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.7 }}
-          >
-            {hero.subtext}
-          </motion.p>
- }
+          {hero.subtext && (
+            <motion.p
+              className="max-w-md text-lg text-foreground-600"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.7 }}
+            >
+              {hero.subtext}
+            </motion.p>
+          )}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

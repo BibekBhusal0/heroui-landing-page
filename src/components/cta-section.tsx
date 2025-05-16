@@ -5,7 +5,7 @@ import { ctaSection } from "../data/landing-data";
 
 export const CtaSection: React.FC = () => {
   return (
-    <section className="bg-gradient-to-r dark:from-primary-200 from-primary-800 to-primary-600 dark:to-primary-400 px-4 py-24 text-white md:px-8">
+    <section className="bg-gradient-to-r from-primary-800 to-primary-600 px-4 py-24 text-white dark:from-primary-200 dark:to-primary-400 md:px-8">
       <div className="mx-auto max-w-5xl text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

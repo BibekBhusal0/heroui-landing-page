@@ -74,21 +74,21 @@ export const testimonials: Testimonial[] = [
     role: "Founder at LoremCo",
     text: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.",
     image: "https://img.heroui.chat/image/avatar?w=100&h=100&u=jane",
-    stars: 4
+    stars: 4,
   },
   {
     name: "John Smith",
     role: "CEO at IpsumTech",
     text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
     image: "https://img.heroui.chat/image/avatar?w=100&h=100&u=john",
-    stars: 5
+    stars: 5,
   },
   {
     name: "Sarah Johnson",
     role: "CTO at TechSolutions",
     text: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.",
     image: "https://img.heroui.chat/image/avatar?w=100&h=100&u=sarah",
-    stars: 5
+    stars: 5,
   },
 ];
 
@@ -210,6 +210,6 @@ export const navLinks: NavLink[] = [
 ];
 
 export const headerButtons: HeaderButtons[] = [
-  { text: "Log in", href: "#", variant: 'light' },
-  { text: "Sign Up", href: "#", variant: 'flat' },
+  { text: "Log in", href: "#", variant: "light" },
+  { text: "Sign Up", href: "#", variant: "flat" },
 ];

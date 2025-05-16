@@ -19,7 +19,6 @@ interface NavbarProps {
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
-
   return (
     <HeroNavbar
       isBordered
@@ -64,7 +63,9 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
         <ThemeSwitch />
         {headerButtons.map((button, index) => (
           <NavbarItem key={`${button.text}-${index}`} className="hidden sm:flex">
-            <Button as={Link} color='primary' variant={button.variant} href={button.href}>{button.text}</Button>
+            <Button as={Link} color="primary" variant={button.variant} href={button.href}>
+              {button.text}
+            </Button>
           </NavbarItem>
         ))}
         <NavbarMenuToggle className="sm:hidden" />
@@ -83,10 +84,12 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
             </Link>
           </NavbarMenuItem>
         ))}
-        <NavbarMenuItem className='gap-2 flex flex-col'>
+        <NavbarMenuItem className="flex flex-col gap-2">
           {headerButtons.map((button, index) => (
             <NavbarItem key={`${button.text}-${index}`} className="">
-              <Button as={Link} color='primary' variant={button.variant} href={button.href}>{button.text}</Button>
+              <Button as={Link} color="primary" variant={button.variant} href={button.href}>
+                {button.text}
+              </Button>
             </NavbarItem>
           ))}
         </NavbarMenuItem>

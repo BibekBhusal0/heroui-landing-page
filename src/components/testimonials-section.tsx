@@ -45,13 +45,11 @@ export const TestimonialsSection: React.FC = () => {
             >
               <Card className="h-full" shadow="sm">
                 <CardBody className="flex flex-col gap-4 p-6">
-                  {
-                    testimonial.stars &&
-
+                  {testimonial.stars && (
                     <div className="mb-2 flex items-center gap-2">
                       {renderStars(testimonial.stars)}
                     </div>
-                  }
+                  )}
 
                   <p className="italic text-foreground-600">"{testimonial.text}"</p>
 
@@ -59,7 +57,9 @@ export const TestimonialsSection: React.FC = () => {
                     <Avatar src={testimonial.image} alt={testimonial.name} size="md" />
                     <div>
                       <p className="font-semibold">{testimonial.name}</p>
-                      {testimonial.role && <p className="text-sm text-foreground-500">{testimonial.role}</p>}
+                      {testimonial.role && (
+                        <p className="text-sm text-foreground-500">{testimonial.role}</p>
+                      )}
                     </div>
                   </div>
                 </CardBody>
