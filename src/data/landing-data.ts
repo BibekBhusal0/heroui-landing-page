@@ -1,4 +1,18 @@
-export const hero = {
+import {
+  CTASection,
+  FAQ,
+  Feature,
+  Footer,
+  Hero,
+  NavLink,
+  NewsletterSignup,
+  NumberCard,
+  Pricing,
+  SpecialOffer,
+  Testimonial,
+} from "./types";
+
+export const hero: Hero = {
   headline: "Launch Your Product Faster",
   subtext:
     "A clean, conversion-optimized landing page template built with HeroUI. Perfect for SaaS, apps, or tools.",
@@ -9,7 +23,7 @@ export const hero = {
   image: "https://img.heroui.chat/image/dashboard?w=600&h=400&u=hero123",
 };
 
-export const features = [
+export const features: Feature[] = [
   {
     title: "Fast Setup",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
@@ -32,7 +46,7 @@ export const features = [
   },
 ];
 
-export const numbers = [
+export const numbers: NumberCard[] = [
   {
     icon: "lucide:building",
     title: "Trusted by",
@@ -53,7 +67,7 @@ export const numbers = [
   },
 ];
 
-export const testimonials = [
+export const testimonials: Testimonial[] = [
   {
     name: "Jane Doe",
     role: "Founder at LoremCo",
@@ -74,9 +88,9 @@ export const testimonials = [
   },
 ];
 
-export const pricing = {
+export const pricing: Pricing = {
   yearly_message: "save 20%",
-  highlight: { title: 'Pro', message: 'Most Popluar' },
+  highlight: { title: "Pro", message: "Most Popluar" },
   plans: [
     {
       title: "Basic",
@@ -104,7 +118,7 @@ export const pricing = {
   ],
 };
 
-export const faqs = [
+export const faqs: FAQ[] = [
   {
     question: "Is there a free trial?",
     answer: "Yes, you can try it free for 7 days without a credit card.",
@@ -123,7 +137,7 @@ export const faqs = [
   },
 ];
 
-export const ctaSection = {
+export const ctaSection: CTASection = {
   text: "Ready to get started?",
   button: {
     text: "Start Free Trial",
@@ -131,14 +145,14 @@ export const ctaSection = {
   },
 };
 
-export const newsletterSignup = {
+export const newsletterSignup: NewsletterSignup = {
   heading: "Stay Updated!",
   subtext: "Subscribe to our newsletter for the latest news and offers.",
   placeholder: "Enter your email",
   buttonText: "Subscribe",
 };
 
-export const footer = {
+export const footer: Footer = {
   logo: "https://img.heroui.chat/image/ai?w=100&h=40&u=logo123",
   links: ["About", "Blog", "Privacy", "Terms"],
   socials: [
@@ -153,15 +167,13 @@ export const footer = {
   },
 };
 
-// Special offer countdown data
-export const specialOffer = {
+export const specialOffer: SpecialOffer = {
   title: "Special Launch Offer",
   description: "Get 50% off for the first 3 months when you sign up today!",
-  endTime: new Date(Date.now() + 24 * 60 * 60 * 1000), // 24 hours from now
+  endTime: new Date(Date.now() + 24 * 60 * 60 * 1000),
 };
 
-// Navigation links
-export const navLinks = [
+export const navLinks: NavLink[] = [
   { name: "Home", href: "#home" },
   { name: "Features", href: "#features" },
   { name: "Testimonials", href: "#testimonials" },
