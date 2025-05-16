@@ -3,6 +3,7 @@ import {
   FAQ,
   Feature,
   Footer,
+  HeaderButtons,
   Hero,
   NavLink,
   NewsletterSignup,
@@ -179,4 +180,9 @@ export const navLinks: NavLink[] = [
   { name: "Testimonials", href: "#testimonials" },
   { name: "Pricing", href: "#pricing" },
   { name: "FAQ", href: "#faq" },
+];
+
+export const headerButtons: HeaderButtons[] = [
+  { text: "Log in", href: "#", variant: 'light' },
+  { text: "Sign Up", href: "#", variant: 'flat' },
 ];

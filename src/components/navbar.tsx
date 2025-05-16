@@ -11,14 +11,13 @@ import {
   NavbarMenuItem,
 } from "@heroui/react";
 import { motion } from "framer-motion";
-import { navLinks } from "../data/landing-data";
+import { headerButtons, navLinks } from "../data/landing-data";
 
 interface NavbarProps {
   activeSection: string;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   return (
     <HeroNavbar
@@ -61,18 +60,13 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
       </NavbarContent>
 
       <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <Link href="#">Login</Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Button as={Link} color="primary" href="#" variant="flat">
-            Sign Up
-          </Button>
-        </NavbarItem>
-        <NavbarMenuToggle
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="sm:hidden"
-        />
+
+        {headerButtons.map((button, index) => (
+          <NavbarItem key={`${button.text}-${index}`} className="hidden sm:flex">
+            <Button as={Link} color='primary' variant={button.variant} href={button.href}>{button.text}</Button>
+          </NavbarItem>
+        ))}
+        <NavbarMenuToggle className="sm:hidden" />
       </NavbarContent>
 
       <NavbarMenu>
@@ -88,10 +82,16 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
             </Link>
           </NavbarMenuItem>
         ))}
-        <NavbarMenuItem>
-          <Link color="primary" href="#" size="lg">
+        <NavbarMenuItem className = 'gap-2 flex flex-col'>
+          {headerButtons.map((button, index) => (
+            <NavbarItem key={`${button.text}-${index}`} className="">
+              <Button as={Link} color='primary' variant={button.variant} href={button.href}>{button.text}</Button>
+            </NavbarItem>
+          ))}
+          {/* <Link color="primary" href="#" size="lg">
+
             Login
-          </Link>
+          </Link> */}
         </NavbarMenuItem>
       </NavbarMenu>
     </HeroNavbar>

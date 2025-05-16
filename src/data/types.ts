@@ -89,3 +89,8 @@ export interface NavLink {
   href: string;
 }
 
+export interface HeaderButtons {
+  text: string;
+  href?: string;
+  variant?: 'solid' | 'faded' | 'bordered' | 'light' | 'flat' | 'ghost' | 'shadow'
+}
