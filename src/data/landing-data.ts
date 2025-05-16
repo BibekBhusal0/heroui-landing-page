@@ -75,7 +75,8 @@ export const testimonials = [
 ];
 
 export const pricing = {
-  yearly_message: "save 60%",
+  yearly_message: "save 20%",
+  highlight: { title: 'Pro', message: 'Most Popluar' },
   plans: [
     {
       title: "Basic",
@@ -88,7 +89,6 @@ export const pricing = {
       price: { monthly: "$50", yearly: "$500" },
       features: ["Unlimited Projects", "Priority Support", "Advanced Analytics"],
       cta: "Choose Plan",
-      popular: true,
     },
     {
       title: "Enterprise",
