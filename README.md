@@ -1,7 +1,6 @@
-
 # HeroUI Landing Page Template
 
-This is a responsive, clean, and conversion-optimized **Landing Page Template** built with [HeroUI](https://heroui.com). Ideal for SaaS, apps, tools, or any product/service showcase. 
+This is a responsive, clean, and conversion-optimized **Landing Page Template** built with [HeroUI](https://heroui.com). Ideal for SaaS, apps, tools, or any product/service showcase.
 Built as part of the HeroHack 2025 submission.
 
 ## 🚀 Features
@@ -25,10 +24,9 @@ Built as part of the HeroHack 2025 submission.
 - Framer Motion
 - Iconify (Lucide icons)
 
-
 ## 📸 Screenshots
 
-![demo](./screenshots/demo.png) 
+![demo](./screenshots/demo.png)
 
 ## 🔗 Live Demo
 
