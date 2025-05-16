@@ -25,6 +25,7 @@ export interface NumberCard {
 export interface Testimonial {
   name: string;
   role?: string;
+  stars?: 0 | 1 | 2 | 3 | 4 | 5;
   text: string;
   image: string;
 }

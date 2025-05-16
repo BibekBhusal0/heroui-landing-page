@@ -5,6 +5,19 @@ import { testimonials } from "../data/landing-data";
 import { Icon } from "@iconify/react";
 
 export const TestimonialsSection: React.FC = () => {
+  const renderStars = (starCount?: number) => {
+    const filledStars = starCount !== undefined ? starCount : 5;
+    // const outlinedStars = 5 - filledStars;
+
+    return [...Array(5)].map((_, i) => {
+      if (i < filledStars) {
+        return <Icon key={i} icon="solar:star-bold" className="text-lg text-warning" />;
+      } else {
+        return <Icon key={i} icon="solar:star-linear" className="text-lg text-warning" />;
+      }
+    });
+  };
+
   return (
     <section id="testimonials" className="px-4 py-24 md:px-8">
       <div className="mx-auto max-w-7xl">
@@ -32,11 +45,13 @@ export const TestimonialsSection: React.FC = () => {
             >
               <Card className="h-full" shadow="sm">
                 <CardBody className="flex flex-col gap-4 p-6">
-                  <div className="mb-2 flex items-center gap-2">
-                    {[...Array(5)].map((_, i) => (
-                      <Icon key={i} icon="lucide:star" className="text-lg text-warning" />
-                    ))}
-                  </div>
+                  {
+                    testimonial.stars &&
+
+                    <div className="mb-2 flex items-center gap-2">
+                      {renderStars(testimonial.stars)}
+                    </div>
+                  }
 
                   <p className="italic text-foreground-600">"{testimonial.text}"</p>
 
