@@ -20,7 +20,6 @@ const App: React.FC = () => {
     const handleScroll = () => {
       const sections = document.querySelectorAll("section[id]");
       const scrollPosition = window.scrollY + 100;
-
       sections.forEach((section) => {
         const sectionId = section.getAttribute("id") || "";
         const sectionTop = (section as HTMLElement).offsetTop;

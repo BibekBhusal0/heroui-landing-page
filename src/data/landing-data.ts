@@ -13,17 +13,17 @@ export const features = [
   {
     title: "Fast Setup",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    icon: "lucide:rocket-launch",
+    icon: "lucide:rocket",
   },
   {
     title: "Responsive Design",
     description: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    icon: "lucide:devices",
+    icon: "lucide:monitor-smartphone",
   },
   {
     title: "Fully Customizable",
     description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
-    icon: "lucide:tools",
+    icon: "lucide:settings-2",
   },
   {
     title: "Built with HeroUI",
