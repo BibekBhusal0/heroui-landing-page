@@ -1,11 +1,12 @@
 import React from "react";
-import { Card, CardBody, CardHeader, CardFooter, Button, Switch, Chip, cn } from "@heroui/react";
+import { Card, CardBody, CardHeader, CardFooter, Button, Chip, cn, Tabs, Tab } from "@heroui/react";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 import { pricing } from "../data/landing-data";
 
 export const PricingSection: React.FC = () => {
-  const [isYearly, setIsYearly] = React.useState(false);
+  const [selectedTab, setSelectedTab] = React.useState("monthly");
+  const isYearly = selectedTab === "yearly";
 
   return (
     <section id="pricing" className="bg-content1 px-4 py-24 md:px-8">
@@ -23,24 +24,26 @@ export const PricingSection: React.FC = () => {
           </p>
 
           <div className="mb-8 flex items-center justify-center gap-3">
-            <span
-              className={`text-sm font-medium ${!isYearly ? "text-primary" : "text-foreground-600"}`}
-            >
-              Monthly
-            </span>
-            <Switch isSelected={isYearly} onValueChange={setIsYearly} size="lg" color="primary" />
-            <span className="flex items-center gap-2">
-              <span
-                className={`text-sm font-medium ${isYearly ? "text-primary" : "text-foreground-600"}`}
-              >
-                Yearly
-              </span>
-              {isYearly && (
-                <Chip color="success" variant="flat" className="text-xs">
-                  {pricing.yearly_message}
-                </Chip>
-              )}
-            </span>
+            <Tabs selectedKey={selectedTab} onSelectionChange={(e) => setSelectedTab(e as string)}>
+              <Tab value="monthly"
+                key="monthly" title="Monthly" />
+              <Tab value="yearly"
+                key="yearly"
+                title={
+
+                  <>
+
+                    Yearly
+                    {
+                      pricing.yearly_message &&
+                      <Chip color="success" variant="flat" className="text-xs ml-2">
+                        {pricing.yearly_message}
+                      </Chip>
+                    }
+                  </>
+                }
+              />
+            </Tabs>
           </div>
         </motion.div>
 

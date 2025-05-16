@@ -37,7 +37,7 @@ export interface PricingPlan {
 }
 
 export interface Pricing {
-  yearly_message: string;
+  yearly_message?: string;
   highlight?: { title: string; message: string };
   plans: PricingPlan[];
 }
