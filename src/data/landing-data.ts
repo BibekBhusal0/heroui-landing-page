@@ -158,7 +158,26 @@ export const newsletterSignup: NewsletterSignup = {
 
 export const footer: Footer = {
   logo: "https://img.heroui.chat/image/ai?w=100&h=40&u=logo123",
-  links: ["About", "Blog", "Privacy", "Terms"],
+  sections: [
+    {
+      title: "Company",
+      links: [
+        { text: "About", href: "#about" },
+        { text: "Blog", href: "#blog" },
+        { text: "Careers", href: "#careers" },
+        { text: "Contact", href: "#contact" },
+      ],
+    },
+    {
+      title: "Legal",
+      links: [
+        { text: "Privacy", href: "#privacy" },
+        { text: "Terms", href: "#terms" },
+        { text: "Cookies", href: "#cookies" },
+        { text: "Licenses", href: "#licenses" },
+      ],
+    },
+  ],
   socials: [
     { icon: "lucide:twitter", link: "#" },
     { icon: "lucide:github", link: "#" },
@@ -169,6 +188,11 @@ export const footer: Footer = {
     phone: "123 456 789",
     email: "thisIsNot@email.com",
   },
+  copyright: `© ${new Date().getFullYear()} ACME Inc. All rights reserved.`,
+  additionalLinks: [
+    { text: "Terms of Service", href: "#terms" },
+    { text: "Privacy Policy", href: "#privacy" },
+  ],
 };
 
 export const specialOffer: SpecialOffer = {

@@ -30,74 +30,34 @@ export const Footer: React.FC = () => {
                     href={social.link}
                     className="text-foreground-500 hover:text-primary"
                   >
-                    {
-
-                      social.icon &&
-                    <Icon icon={social.icon} className="text-xl" />
-                    }
+                    {social.icon && <Icon icon={social.icon} className="text-xl" />}
                   </Link>
                 ))}
               </div>
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1, duration: 0.5 }}
-            className="col-span-1"
-          >
-            <h3 className="mb-4 font-semibold">Company</h3>
-            <ul className="space-y-2">
-              {footer.links.slice(0, 2).map((link) => (
-                <li key={link}>
-                  <Link href="#" className="text-foreground-600 hover:text-primary">
-                    {link}
-                  </Link>
-                </li>
-              ))}
-              <li>
-                <Link href="#" className="text-foreground-600 hover:text-primary">
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-foreground-600 hover:text-primary">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="col-span-1"
-          >
-            <h3 className="mb-4 font-semibold">Legal</h3>
-            <ul className="space-y-2">
-              {footer.links.slice(2).map((link) => (
-                <li key={link}>
-                  <Link href="#" className="text-foreground-600 hover:text-primary">
-                    {link}
-                  </Link>
-                </li>
-              ))}
-              <li>
-                <Link href="#" className="text-foreground-600 hover:text-primary">
-                  Cookies
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-foreground-600 hover:text-primary">
-                  Licenses
-                </Link>
-              </li>
-            </ul>
-          </motion.div>
+          {footer.sections.map((section, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 * index, duration: 0.5 }}
+              className="col-span-1"
+            >
+              <h3 className="mb-4 font-semibold">{section.title}</h3>
+              <ul className="space-y-2">
+                {section.links.map((link) => (
+                  <li key={link.text}>
+                    <Link href={link.href} className="text-foreground-600 hover:text-primary">
+                      {link.text}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -126,16 +86,17 @@ export const Footer: React.FC = () => {
 
         <div className="mt-16 border-t border-foreground-200 pt-8">
           <div className="flex flex-col items-center justify-between md:flex-row">
-            <p className="text-sm text-foreground-500">
-              © {new Date().getFullYear()} ACME Inc. All rights reserved.
-            </p>
+            <p className="text-sm text-foreground-500">{footer.copyright}</p>
             <div className="mt-4 flex gap-4 md:mt-0">
-              <Link href="#" className="text-sm text-foreground-500 hover:text-primary">
-                Terms of Service
-              </Link>
-              <Link href="#" className="text-sm text-foreground-500 hover:text-primary">
-                Privacy Policy
-              </Link>
+              {footer.additionalLinks?.map((link) => (
+                <Link
+                  key={link.text}
+                  href={link.href}
+                  className="text-sm text-foreground-500 hover:text-primary"
+                >
+                  {link.text}
+                </Link>
+              ))}
             </div>
           </div>
         </div>

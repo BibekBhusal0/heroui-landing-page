@@ -63,20 +63,32 @@ export interface NewsletterSignup {
   buttonText: string;
 }
 
-export interface FooterLink {
+export interface SocialsLinks {
   icon?: string;
   link: string;
 }
 
+export interface FooterLink {
+  text: string;
+  href: string;
+}
+
+export interface FooterSection {
+  title: string;
+  links: FooterLink[];
+}
+
 export interface Footer {
   logo: string;
-  links: string[];
-  socials: FooterLink[];
+  sections: FooterSection[];
+  socials: SocialsLinks[];
   contact: {
     location: string;
     phone: string;
     email: string;
   };
+  copyright?: string;
+  additionalLinks?: FooterLink[];
 }
 
 export interface SpecialOffer {
