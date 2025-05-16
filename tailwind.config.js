@@ -10,10 +10,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ["Inter", "sans-serif"],
       },
     },
   },
   darkMode: "class",
-  plugins: [heroui()]
-}
+  plugins: [heroui()],
+};

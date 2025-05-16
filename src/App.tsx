@@ -41,7 +41,7 @@ const App: React.FC = () => {
     <div className="min-h-screen bg-background">
       <ToastProvider />
       <Navbar activeSection={activeSection} />
-      
+
       <main>
         <HeroSection />
         <FeaturesSection />
@@ -52,17 +52,17 @@ const App: React.FC = () => {
         <CtaSection />
         <NewsletterSection />
       </main>
-      
+
       <Footer />
-      
-      <motion.div 
+
+      <motion.div
         className="fixed bottom-6 right-6 z-50"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 2 }}
       >
-        <Button 
-          color="primary" 
+        <Button
+          color="primary"
           variant="shadow"
           size="lg"
           radius="full"

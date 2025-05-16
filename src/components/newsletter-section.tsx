@@ -9,11 +9,11 @@ export const NewsletterSection: React.FC = () => {
   const [email, setEmail] = React.useState("");
   const [isLoading, setIsLoading] = React.useState(false);
   const [isSubmitted, setIsSubmitted] = React.useState(false);
-  
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    if (!email || !email.includes('@')) {
+
+    if (!email || !email.includes("@")) {
       addToast({
         title: "Invalid Email",
         description: "Please enter a valid email address.",
@@ -21,15 +21,15 @@ export const NewsletterSection: React.FC = () => {
       });
       return;
     }
-    
+
     setIsLoading(true);
-    
+
     // Simulate API call
     setTimeout(() => {
       setIsLoading(false);
       setIsSubmitted(true);
       setEmail("");
-      
+
       addToast({
         title: "Success!",
         description: "You've been subscribed to our newsletter.",
@@ -37,27 +37,27 @@ export const NewsletterSection: React.FC = () => {
       });
     }, 1500);
   };
-  
+
   return (
-    <section className="py-24 px-4 md:px-8 bg-content2">
-      <div className="max-w-4xl mx-auto">
+    <section className="bg-content2 px-4 py-24 md:px-8">
+      <div className="mx-auto max-w-4xl">
         <Card shadow="md" className="overflow-hidden">
           <CardBody className="p-8 md:p-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
               >
-                <h2 className="text-2xl md:text-3xl font-bold mb-4">{newsletterSignup.heading}</h2>
-                <p className="text-foreground-600 mb-6">{newsletterSignup.subtext}</p>
-                
+                <h2 className="mb-4 text-2xl font-bold md:text-3xl">{newsletterSignup.heading}</h2>
+                <p className="mb-6 text-foreground-600">{newsletterSignup.subtext}</p>
+
                 <div className="hidden md:block">
-                  <Icon icon="lucide:mail" className="text-primary text-6xl opacity-80" />
+                  <Icon icon="lucide:mail" className="text-6xl text-primary opacity-80" />
                 </div>
               </motion.div>
-              
+
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -65,22 +65,22 @@ export const NewsletterSection: React.FC = () => {
                 transition={{ duration: 0.5 }}
               >
                 {isSubmitted ? (
-                  <motion.div 
-                    className="text-center p-6"
+                  <motion.div
+                    className="p-6 text-center"
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ type: "spring", stiffness: 200 }}
                   >
-                    <div className="bg-success/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                      <Icon icon="lucide:check" className="text-success text-3xl" />
+                    <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-success/10 p-4">
+                      <Icon icon="lucide:check" className="text-3xl text-success" />
                     </div>
-                    <h3 className="text-xl font-bold mb-2">Thank You!</h3>
+                    <h3 className="mb-2 text-xl font-bold">Thank You!</h3>
                     <p className="text-foreground-600">
                       You've been successfully subscribed to our newsletter.
                     </p>
-                    <Button 
-                      color="primary" 
-                      variant="light" 
+                    <Button
+                      color="primary"
+                      variant="light"
                       className="mt-4"
                       onPress={() => setIsSubmitted(false)}
                     >
@@ -99,16 +99,16 @@ export const NewsletterSection: React.FC = () => {
                       radius="sm"
                       isRequired
                     />
-                    <Button 
-                      type="submit" 
-                      color="primary" 
+                    <Button
+                      type="submit"
+                      color="primary"
                       className="w-full"
                       size="lg"
                       isLoading={isLoading}
                     >
                       {newsletterSignup.buttonText}
                     </Button>
-                    <p className="text-xs text-foreground-500 text-center">
+                    <p className="text-center text-xs text-foreground-500">
                       We respect your privacy. Unsubscribe at any time.
                     </p>
                   </form>

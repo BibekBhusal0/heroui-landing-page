@@ -5,8 +5,8 @@ import { ctaSection } from "../data/landing-data";
 
 export const CtaSection: React.FC = () => {
   return (
-    <section className="py-24 px-4 md:px-8 bg-gradient-to-r from-primary-800 to-primary-600 text-white">
-      <div className="max-w-5xl mx-auto text-center">
+    <section className="bg-gradient-to-r from-primary-800 to-primary-600 px-4 py-24 text-white md:px-8">
+      <div className="mx-auto max-w-5xl text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -14,26 +14,26 @@ export const CtaSection: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="space-y-8"
         >
-          <h2 className="text-3xl md:text-5xl font-bold">{ctaSection.text}</h2>
-          
+          <h2 className="text-3xl font-bold md:text-5xl">{ctaSection.text}</h2>
+
           <motion.div
             initial={{ scale: 0.9 }}
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
           >
-            <Button 
-              size="lg" 
-              color="warning" 
+            <Button
+              size="lg"
+              color="warning"
               variant="shadow"
               href={ctaSection.button.link}
-              className="font-medium text-lg px-8"
+              className="px-8 text-lg font-medium"
             >
               {ctaSection.button.text}
             </Button>
           </motion.div>
-          
-          <p className="text-white/80 max-w-lg mx-auto">
+
+          <p className="mx-auto max-w-lg text-white/80">
             No credit card required. Start your free trial today and see the difference.
           </p>
         </motion.div>

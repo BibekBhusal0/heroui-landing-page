@@ -1,5 +1,15 @@
 import React from "react";
-import { Navbar as HeroNavbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button, NavbarMenuToggle, NavbarMenu, NavbarMenuItem } from "@heroui/react";
+import {
+  Navbar as HeroNavbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  Link,
+  Button,
+  NavbarMenuToggle,
+  NavbarMenu,
+  NavbarMenuItem,
+} from "@heroui/react";
 import { motion } from "framer-motion";
 import { navLinks } from "../data/landing-data";
 
@@ -11,16 +21,16 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   return (
-    <HeroNavbar 
-      isBordered 
-      isBlurred 
-      maxWidth="xl" 
+    <HeroNavbar
+      isBordered
+      isBlurred
+      maxWidth="xl"
       className="bg-background/70 backdrop-blur-md"
       shouldHideOnScroll={false}
     >
       <NavbarBrand>
-        <motion.p 
-          className="font-bold text-inherit text-xl"
+        <motion.p
+          className="text-xl font-bold text-inherit"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
@@ -28,18 +38,18 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
           ACME
         </motion.p>
       </NavbarBrand>
-      
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+
+      <NavbarContent className="hidden gap-4 sm:flex" justify="center">
         {navLinks.map((link) => (
           <NavbarItem key={link.name} isActive={activeSection === link.href.substring(1)}>
-            <Link 
-              color={activeSection === link.href.substring(1) ? "primary" : "foreground"} 
+            <Link
+              color={activeSection === link.href.substring(1) ? "primary" : "foreground"}
               href={link.href}
               className="relative"
             >
               {link.name}
               {activeSection === link.href.substring(1) && (
-                <motion.span 
+                <motion.span
                   className="absolute -bottom-1 left-0 h-0.5 w-full bg-primary"
                   layoutId="activeSection"
                   transition={{ type: "spring", stiffness: 380, damping: 30 }}
@@ -49,7 +59,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
           </NavbarItem>
         ))}
       </NavbarContent>
-      
+
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
           <Link href="#">Login</Link>
@@ -64,7 +74,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
           className="sm:hidden"
         />
       </NavbarContent>
-      
+
       <NavbarMenu>
         {navLinks.map((link, index) => (
           <NavbarMenuItem key={`${link.name}-${index}`}>
