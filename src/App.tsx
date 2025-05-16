@@ -1,6 +1,5 @@
 import React from "react";
-import { Button, ToastProvider } from "@heroui/react";
-import { motion } from "framer-motion";
+import { ToastProvider } from "@heroui/react";
 
 // Components
 import { Navbar } from "./components/navbar";
@@ -26,7 +25,6 @@ const App: React.FC = () => {
         const sectionId = section.getAttribute("id") || "";
         const sectionTop = (section as HTMLElement).offsetTop;
         const sectionHeight = (section as HTMLElement).offsetHeight;
-
         if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
           setActiveSection(sectionId);
         }
@@ -55,23 +53,7 @@ const App: React.FC = () => {
 
       <Footer />
 
-      <motion.div
-        className="fixed bottom-6 right-6 z-50"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 2 }}
-      >
-        <Button
-          color="primary"
-          variant="shadow"
-          size="lg"
-          radius="full"
-          onPress={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="shadow-lg"
-        >
-          Back to Top
-        </Button>
-      </motion.div>
+
     </div>
   );
 };
