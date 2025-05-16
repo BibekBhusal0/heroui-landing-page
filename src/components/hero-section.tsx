@@ -22,7 +22,7 @@ export const HeroSection: React.FC = () => {
             {hero.headline}
           </motion.h1>
 
-          <motion.p
+          {hero.subtext &&  <motion.p
             className="max-w-md text-lg text-foreground-600"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -30,7 +30,7 @@ export const HeroSection: React.FC = () => {
           >
             {hero.subtext}
           </motion.p>
-
+ }
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

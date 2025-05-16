@@ -44,7 +44,7 @@ export const TestimonialsSection: React.FC = () => {
                     <Avatar src={testimonial.image} alt={testimonial.name} size="md" />
                     <div>
                       <p className="font-semibold">{testimonial.name}</p>
-                      <p className="text-sm text-foreground-500">{testimonial.role}</p>
+                      {testimonial.role && <p className="text-sm text-foreground-500">{testimonial.role}</p>}
                     </div>
                   </div>
                 </CardBody>

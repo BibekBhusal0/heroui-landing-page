@@ -30,7 +30,11 @@ export const Footer: React.FC = () => {
                     href={social.link}
                     className="text-foreground-500 hover:text-primary"
                   >
+                    {
+
+                      social.icon &&
                     <Icon icon={social.icon} className="text-xl" />
+                    }
                   </Link>
                 ))}
               </div>

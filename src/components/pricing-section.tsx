@@ -54,17 +54,17 @@ export const PricingSection: React.FC = () => {
               transition={{ delay: index * 0.1, duration: 0.5 }}
               className="relative"
             >
-              {plan.title === pricing.highlight.title && (
+              {plan.title === pricing.highlight?.title && (
                 <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 transform">
                   <Badge color="primary" variant="solid" className="px-4 py-1 text-sm">
-                    {pricing.highlight.message}
+                    {pricing.highlight?.message}
                   </Badge>
                 </div>
               )}
 
               <Card
-                className={`h-full ${plan.title === pricing.highlight.title ? "border-primary shadow-lg" : ""}`}
-                shadow={plan.title === pricing.highlight.title ? "md" : "sm"}
+                className={`h-full ${plan.title === pricing.highlight?.title ? "border-primary shadow-lg" : ""}`}
+                shadow={plan.title === pricing.highlight?.title ? "md" : "sm"}
               >
                 <CardHeader className="flex flex-col gap-2 pb-0">
                   <h3 className="text-xl font-bold">{plan.title}</h3>
@@ -91,8 +91,8 @@ export const PricingSection: React.FC = () => {
 
                 <CardFooter>
                   <Button
-                    color={plan.title === pricing.highlight.title ? "primary" : "default"}
-                    variant={plan.title === pricing.highlight.title ? "solid" : "flat"}
+                    color={plan.title === pricing.highlight?.title ? "primary" : "default"}
+                    variant={plan.title === pricing.highlight?.title ? "solid" : "flat"}
                     className="w-full"
                     size="lg"
                   >
