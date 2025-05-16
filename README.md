@@ -28,6 +28,11 @@ Built as part of the HeroHack 2025 submission.
 
 ![demo](./screenshots/demo.png)
 
+
+
+https://github.com/user-attachments/assets/a33c91e0-a818-47f0-b47c-5af0ceba94ab
+
+
 ## 🔗 Live Demo
 
 [Live Link](https://bibekbhusal0.github.io/heroui-landing-page/)
